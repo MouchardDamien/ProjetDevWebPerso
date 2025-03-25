@@ -1,0 +1,42 @@
+function HomePage() {
+  return <h1>Page d'Accueil</h1>
+}
+
+function AboutPage() {
+  return <h1>À Propos</h1>
+}
+
+function ContactPage() {
+  return <h1>Contact</h1>
+}
+
+function App() {
+  return (
+    <Router>
+      {/* Barre de navigation avec des liens */}
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Accueil</Link>
+          </li>
+          <li>
+            <Link to="/about">À Propos</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Configuration des routes */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        
+        {/* Redirection par défaut si route non trouvée */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
+  )
+}
