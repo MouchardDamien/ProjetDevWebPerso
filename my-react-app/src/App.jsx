@@ -8,9 +8,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Start />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/home/singin" element={<SingIn />} />
-          <Route path="/home/singup" element={<SingUp />} />
+          <Route path="/Accueil" element={<Home />} />
+          <Route path="/Accueil/Connexion" element={<SingIn />} />
+          <Route path="/Accueil/Inscription" element={<SingUp />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
@@ -41,7 +41,7 @@ function Start() {
       setAnimating(true);
       
       setTimeout(() => {
-        window.location.href = "/home"
+        window.location.href = "/Accueil"
       }, 1000);
     }
     
@@ -57,8 +57,8 @@ function Start() {
         <Logo name="logo_start"/>
 
         <div className="content">
-          <h1 className="start_title">WELCOME ON CY-HOUSE !</h1>
-          <h3 className="sub_start">Click to continue.</h3>
+          <h1 className="start_title">BIENVENUE SUR CY-HOUSE !</h1>
+          <h3 className="sub_start">Cliquer pour continuer.</h3>
         </div>
         
         {animating && (
@@ -79,7 +79,7 @@ function Start() {
 function Home() {
   return (
     <div className = "home">
-        <h1 className="home_title">HOME PAGE</h1>
+        <h1 className="home_title">ACCUEIL</h1>
         <Logo name="logo_home"/>
         <NavBar1/>
     </div>
@@ -89,7 +89,7 @@ function Home() {
 function SingIn() {
   return (
     <div className="singIn">
-
+      
     </div>
   )
 }
@@ -107,10 +107,10 @@ function NavBar1() {
     <nav>
       <ul>
         <li>
-          <Link to="/home/singin">Sing in</Link>
+          <Link to="/Accueil/Connexion">Connexion</Link>
         </li>
         <li>
-          <Link to="/home/singup">Sing up</Link>
+          <Link to="/Accueil/Inscription">Inscription</Link>
         </li>
       </ul>
     </nav>
